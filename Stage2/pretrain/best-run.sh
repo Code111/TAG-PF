@@ -1,0 +1,3 @@
+###### Solar 1
+
+CUDA_VISIBLE_DEVICES=0,1 torchrun --standalone --nproc_per_node=2 run_longExp.py --root_path "../build_tokens/dataset-pre/solar_stations" --train_batch_size 8 --gradient_accumulation_steps 1 --lora_r 32 --lora_alpha 64 --codebook_size 128 --tokens_config "./config/128-config.json" --data_path "128-Solar station site 1 (Nominal capacity-50MW).pt" --tokens_checkpoints "./build_tokens/checkpoints/Solar station site 1 (Nominal capacity-50MW).csv/128-checkpoint.pth" --LLM_model_path /mnt/diska/fjl/LLM/Qwen3-0.6B-Base --learning_rate 0.000035 --weight_decay 0.0 --warmup_ratio 0.02 --label_smoothing 0.0 --grad_clip 0 
