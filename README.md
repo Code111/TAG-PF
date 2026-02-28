@@ -11,17 +11,17 @@ TAG-PF is a two-stage generative forecasting framework that reformulates renewab
 ### 1. Clone the repo
 ```bash
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/TAG-PF.git
-cd TAG-PF```
+cd TAG-PF
 
 ### 2. Environment Setup
 ```bash
 conda create -n tagpf python=3.12
 conda activate tagpf
-pip install -r requirements.txt```
+pip install -r requirements.txt
 
 ### 3. Data Preparation
 
-### Dataset Link
+#### Dataset Link
 
 The dataset / feature-variable analysis repository you provided is:
 
