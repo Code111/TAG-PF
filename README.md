@@ -12,3 +12,17 @@ TAG-PF is a two-stage generative forecasting framework that reformulates renewab
 ```bash
 git clone https://github.com/<YOUR_GITHUB_USERNAME>/TAG-PF.git
 cd TAG-PF
+
+## Environment Setup
+```bash
+conda create -n tagpf python=3.12
+conda activate tagpf
+pip install -r requirements.txt
+
+## Data Preparation
+
+### Dataset Link
+
+The dataset / feature-variable analysis repository you provided is:
+
+https://github.com/Bob05757/Renewable-energy-generation-input-feature-variables-analysis
