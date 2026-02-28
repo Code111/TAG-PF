@@ -10,7 +10,7 @@ TAG-PF is a two-stage generative forecasting framework that reformulates renewab
 
 ### 1. Clone the repo
 ```bash
-git clone https://github.com/<YOUR_GITHUB_USERNAME>/TAG-PF.git
+git clone [https://github.com/Code111/TAG-PF.git]
 cd TAG-PF
 ```
 
@@ -29,3 +29,32 @@ The dataset / feature-variable analysis repository you provided is:
 
 https://github.com/Bob05757/Renewable-energy-generation-input-feature-variables-analysis
 ```
+### 4. Train the Time-Series Tokenizer (Stage 1)
+
+In Stage 1, we train a VQ-based time-series tokenizer to map continuous multivariate power–meteorology sequences into discrete tokens.
+
+```bash
+cd Stage1
+sh scripts/run.sh
+```
+### 5. Build Tokenized Datasets (Stage 2 → build_tokens)
+This step uses the trained tokenizer to convert continuous sequences into discrete token sequences for LLM training and evaluation.
+```bash
+cd Stage2/build_tokens
+sh run.sh
+```
+### 6. LLM Training / Alignment and Forecasting (Stage 2 → pretrain)
+In Stage 2, we adapt a pre-trained LLM to perform conditional autoregressive generation over the unified token vocabulary, and then decode generated tokens back to continuous forecasts.
+```bash
+cd Stage2/pretrain
+sh run.sh
+```
+## Acknowledgements
+
+Our implementation is based on the following open-source codebases, with substantial modifications tailored to our research needs. We thank the authors for sharing their implementations and resources.
+
+- Time-Series-Library: https://github.com/thuml/Time-Series-Library  
+- VQGAN (taming-transformers): https://github.com/CompVis/taming-transformers
+
+
+
