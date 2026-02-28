@@ -43,8 +43,10 @@ This step uses the trained tokenizer to convert continuous sequences into discre
 cd Stage2/build_tokens
 sh run.sh
 ```
-### 6. LLM Training / Alignment and Forecasting (Stage 2 → pretrain)
-In Stage 2, we adapt a pre-trained LLM to perform conditional autoregressive generation over the unified token vocabulary, and then decode generated tokens back to continuous forecasts.
+### 6. LLM Fine-tuning / Adaptation and Forecasting (Stage 2 → pretrain)
+
+In Stage 2, we **fine-tune (adapt)** a pre-trained LLM (e.g., via parameter-efficient tuning such as LoRA) to perform **conditional autoregressive generation** over the unified token vocabulary. The generated future tokens are then decoded back to continuous renewable power forecasts.
+
 ```bash
 cd Stage2/pretrain
 sh run.sh
